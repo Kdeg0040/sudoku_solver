@@ -1,0 +1,19 @@
+{
+  "name": "sudoku_solver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kdeg0040/sudoku_solver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kdeg0040/sudoku_solver/issues"
+  },
+  "homepage": "https://github.com/Kdeg0040/sudoku_solver#readme"
+}
