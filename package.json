@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Kdeg0040/sudoku_solver/issues"
   },
-  "homepage": "https://github.com/Kdeg0040/sudoku_solver#readme"
+  "homepage": "https://github.com/Kdeg0040/sudoku_solver#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
 }
