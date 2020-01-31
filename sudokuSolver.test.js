@@ -49,5 +49,8 @@ describe('board', () => {
     expect(board.validColumn(0, 1)).toBe(true);
     expect(board.validSubGrid(0, 0, 1)).toBe(false);
     expect(board.validSubGrid(3, 2, 9)).toBe(true);
+    expect(board.isValid(1, 1, 2)).toBe(false);
+    expect(board.isValid(5, 5, 1)).toBe(false);
+    expect(board.isValid(7, 7, 1)).toBe(true);
   });
 });
