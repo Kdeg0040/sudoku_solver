@@ -24,4 +24,12 @@ Board.prototype.validRow = function(row, value) {
   return !this.grid[row].includes(value);
 }
 
+Board.prototype.validColumn = function(col, value) {
+  let values = [];
+  for (let row = 0; row <= 8; row++) {
+    values.push(this.grid[row][col])
+  }
+  return !values.includes(value);
+}
+
 module.exports = Board;

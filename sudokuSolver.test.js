@@ -46,4 +46,21 @@ describe('board', () => {
     expect(board.validRow(0, 1)).toBe(false);
     expect(board.validRow(0, 3)).toBe(true);
   });
+
+  it('can check if a value is valid on a given column', () => {
+    const board = new Board();
+    board.grid = [
+      [0, 0, 0, 0, 0, 5, 0, 2, 1],
+      [0, 0, 0, 0, 0, 0, 0, 4, 9],
+      [9, 3, 1, 0, 0, 0, 5, 0, 0],
+      [0, 6, 5, 0, 3, 0, 0, 0, 0],
+      [4, 0, 0, 5, 1, 7, 0, 0, 2],
+      [0, 0, 0, 0, 4, 0, 7, 5, 0],
+      [0, 0, 7, 0, 0, 0, 9, 8, 3],
+      [5, 9, 0, 0, 0, 0, 0, 0, 0],
+      [3, 2, 0, 7, 0, 0, 0, 0, 0]
+    ]
+    expect(board.validColumn(0, 9)).toBe(false);
+    expect(board.validColumn(0, 1)).toBe(true);
+  });
 });
