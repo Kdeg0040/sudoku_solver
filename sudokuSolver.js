@@ -1,6 +1,6 @@
 function Board(input) {
   this.input = input;
-  this.grid = null;
+  this.grid;
   this.blanks = [];
 }
 

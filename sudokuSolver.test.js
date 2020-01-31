@@ -1,22 +1,14 @@
 const Board = require('./sudokuSolver');
 
 describe('board', () => {
-  it('can be initialized', () => {
-    const board = new Board();
-    expect(board).toBeDefined();
-  });
-
-  it('can allow input of known numbers', () => {
-    const input = '000005021000000049931000500065030000400517002000040750007000983590000000320700000'
-    const board = new Board(input);
-    expect(board.input.length).toEqual(81);
-  });
-
   it('can draw a 9x9 grid', () => {
-    const blank = '000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+    const blank = 
+    '000000000000000000000000000000000000000000000000000000000000000000000000000000000'
     const board = new Board(blank);
     board.makeGrid(blank);
     expect(board.grid.length).toEqual(9);
+    expect(board.grid[0].length).toEqual(9);
+    expect(board.grid[0][0]).toBe(0);
   });
 
   it('can identify position of blank cells', () => {
@@ -34,5 +26,6 @@ describe('board', () => {
     ]
     board.findBlanks();
     expect(board.blanks).toEqual([[0,0], [1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8]]);
+    expect(board.blanks.length).toEqual(9);
   });
 });
