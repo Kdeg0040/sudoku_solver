@@ -32,4 +32,17 @@ Board.prototype.validColumn = function(col, value) {
   return !values.includes(value);
 }
 
+Board.prototype.validSubGrid = function(row, col, value) {
+  let values = [];
+  let topLeftOfSubGrid = [];
+  topLeftOfSubGrid.push(parseInt(row/3)*3);
+  topLeftOfSubGrid.push(parseInt(col/3)*3);
+  for (let i = topLeftOfSubGrid[0]; i <= topLeftOfSubGrid[0] + 2; i++) {
+    for (let j = topLeftOfSubGrid[1]; j <= topLeftOfSubGrid[1] + 2; j++) {
+      values.push(this.grid[i][j])
+    }
+  }
+  return !values.includes(value);
+}
+
 module.exports = Board;
