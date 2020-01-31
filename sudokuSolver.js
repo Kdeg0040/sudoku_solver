@@ -20,4 +20,8 @@ Board.prototype.findBlanks = function() {
   }
 }
 
+Board.prototype.validRow = function(row, value) {
+  return !this.grid[row].includes(value);
+}
+
 module.exports = Board;
