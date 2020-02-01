@@ -11,11 +11,34 @@ Board.prototype.makeGrid = function(input) {
 }
 
 Board.prototype.findBlanks = function() {
-  for (let row = 0; row <= 8; row++) {
-    for (let col = 0; col <= 8; col++) {
-      if (this.grid[row][col] == 0) {
-        this.blanks.push([row,col])
+  for (let x = 0; x <= 8; x++) {
+    for (let y = 0; y <= 8; y++) {
+      if (this.grid[x][y] == 0) {
+        this.blanks.push([x,y])
       }
+    }
+  }
+}
+
+Board.prototype.solve = function() {
+  const maxValue = 9;
+  for (let i = 0; i < this.blanks.length;) {
+    row = this.blanks[i][0];
+    col = this.blanks[i][1];
+    value = this.grid[row][col] + 1;
+    valid = false;
+    while(!valid && value <= maxValue) {
+      if(this.isValid(row, col, value)) {
+        valid = true;
+        this.grid[row][col] = value;
+        i++;
+      } else {
+        value++;
+      }
+    }
+    if(!valid) {
+      this.grid[row][col] = 0;
+      i--;
     }
   }
 }
