@@ -1,16 +1,12 @@
 (function renderNumButtons() {
   for (let i = 1; i < 10; i++) {
     document.getElementById('num_buttons').innerHTML += 
-    "<button onclick='numButtons(this.value)' value=" + i + ">[" + i + "]</button>"
+    "<button onclick='game.numButtons(this.value)' value=" + i + ">[" + i + "]</button>"
   }
 })();
 
-function numButtons(val) {
-  console.log(val)
-}
-
-function renderBoard(board) {
-  boardDiv = document.getElementById("board");
+(function renderTable() {
+  tableDiv = document.getElementById("board");
   table = document.createElement('TABLE');
   tableBody = document.createElement('TBODY');
   table.appendChild(tableBody);
@@ -19,20 +15,22 @@ function renderBoard(board) {
     tableBody.appendChild(tr);
     for (let j = 0; j < 9; j++) {
       td = document.createElement('TD');
-      if (board.grid[i][j] != 0) {
-        td.appendChild(document.createTextNode(board.grid[i][j]));
-      }
       tableBody.appendChild(td);
     }
   }
-  boardDiv.appendChild(table);
-}
+  tableDiv.appendChild(table);
+})();
 
-function newBoard() {
+function Game() {
   const blank = 
   '000000000000000000000000000000000000000000000000000000000000000000000000000000000'
-  let board = new Board(blank);
-  board.makeGrid(blank);
-  renderBoard(board);
+  board = new Board(blank);
+  board.makeGrid(board.input);
+  this.board = board;
 }
-newBoard();
+
+Game.prototype.numButtons = function(value) {
+  console.log(value)
+}
+
+game = new Game();
