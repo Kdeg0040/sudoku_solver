@@ -48,4 +48,8 @@ td {
 td:hover {
   background: #45454989;
 }
+
+.selected {
+  background: #45454989;
+}
 /*# sourceMappingURL=main.css.map */
