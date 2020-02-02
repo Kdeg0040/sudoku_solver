@@ -1,0 +1,54 @@
+body {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14pt;
+  font-style:normal;
+  font-weight: normal;
+  background: #0f0f23;
+  color: #cccccc;
+
+  .title {
+    color: #ffff66;
+    font-style: normal;
+    text-shadow: 0 0 5px #ffff66;
+  }
+}
+
+button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1em;
+  color: #009900;
+  cursor: pointer;
+}
+
+button:hover, button:focus {
+  color: #99ff99;
+}
+
+h1, h2 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+td {
+  text-align: center;
+  border: 1px solid #45454989; 
+  width: 3em;
+  height: 3em;
+  font-size: 14px;
+}
+
+td:hover {
+  background: #45454989;
+}
+
+.selected {
+  background: #45454989;
+}

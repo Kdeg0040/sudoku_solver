@@ -1,4 +1,4 @@
-const Board = require('./sudokuSolver');
+const Board = require('../src/sudokuSolver');
 
 describe('board', () => {
   it('can draw a 9x9 grid', () => {
