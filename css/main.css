@@ -6,12 +6,23 @@ body {
   color: #cccccc;
 }
 
-a {
+body .title {
+  color: #ffff66;
+  font-style: normal;
+  text-shadow: 0 0 5px #ffff66;
+}
+
+button {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1em;
   color: #009900;
   cursor: pointer;
 }
 
-a:hover, a:focus {
+button:hover, button:focus {
   color: #99ff99;
 }
 
