@@ -1,7 +1,7 @@
 (function renderNumButtons() {
   for (let i = 1; i < 10; i++) {
     document.getElementById('num_buttons').innerHTML += 
-    "<button onclick='game.numButtons(this.value)' value=" + i + ">[" + i + "]</button>"
+    "<button onclick='game.setCellValue(this.value)' value=" + i + ">[" + i + "]</button>"
   }
 })();
 
@@ -34,7 +34,7 @@ function Game() {
   this.selected = null;
 }
 
-Game.prototype.numButtons = function(value) {
+Game.prototype.setCellValue = function(value) {
   if (this.selected != null) {
     row = this.selected[0];
     column = this.selected[1];
