@@ -16,7 +16,7 @@
     for (let j = 0; j < 9; j++) {
       td = document.createElement('TD');
       td.setAttribute("onclick", "game.selectCell(this)");
-      td.setAttribute("class", "selectable");
+      td.setAttribute("class", "");
       td.setAttribute("id", "cell");
 
       tr.appendChild(td);
@@ -31,11 +31,16 @@ function Game() {
   board = new Board(blank);
   board.makeGrid(board.input);
   this.board = board;
-  this.selected;
+  this.selected = null;
 }
 
 Game.prototype.numButtons = function(value) {
-  console.log(value)
+  if (this.selected != null) {
+    row = this.selected[0];
+    column = this.selected[1];
+    this.board.grid[row][column] = parseInt(value);
+  }
+  document.getElementsByClassName("selected")[0].innerHTML = value;
 }
 
 Game.prototype.selectCell = function(element) {
@@ -43,15 +48,14 @@ Game.prototype.selectCell = function(element) {
   column = element.cellIndex;
   if (element.className == "selected") {
     this.selected = null;
-    element.className = "selectable"
+    element.className = ""
   } else {
     if (document.getElementsByClassName("selected")[0]) {
-      document.getElementsByClassName("selected")[0].className = "selectable"
+      document.getElementsByClassName("selected")[0].className = ""
     }
     this.selected = [row, column]; 
     element.className = "selected"
   }
-  console.log(this.selected);
 }
 
 game = new Game();
