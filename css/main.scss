@@ -1,6 +1,7 @@
 body {
   font-family: 'Source Code Pro', monospace;
   font-size: 14pt;
+  font-style:normal;
   font-weight: normal;
   background: #0f0f23;
   color: #cccccc;
@@ -29,4 +30,17 @@ button:hover, button:focus {
 h1, h2 {
   font-size: 1em;
   font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+td {
+  border: 1px solid #45454989; 
+  width: 3em;
+  height: 3em;
+  font-size: 14px;
+  color: white; 
 }
