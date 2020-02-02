@@ -6,6 +6,15 @@ body {
   color: #cccccc;
 }
 
+a {
+  color: #009900;
+  cursor: pointer;
+}
+
+a:hover, a:focus {
+  color: #99ff99;
+}
+
 h1, h2 {
   font-size: 1em;
   font-weight: normal;
