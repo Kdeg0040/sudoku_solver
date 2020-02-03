@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "harp server --port $PORT",
     "test": "jest"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/Kdeg0040/sudoku_solver#readme",
   "devDependencies": {
     "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "harp": "*"
   }
 }
