@@ -41,6 +41,8 @@ Game.prototype.setCellValue = function(value) {
     this.board.grid[row][column] = parseInt(value);
   }
   document.getElementsByClassName("selected")[0].innerHTML = value;
+  document.getElementsByClassName("selected")[0].className = ""
+  this.selected = null;
 }
 
 Game.prototype.selectCell = function(element) {
