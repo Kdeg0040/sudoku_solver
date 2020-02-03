@@ -36,9 +36,12 @@ Board.prototype.solve = function() {
         value++;
       }
     }
-    if(!valid) {
+    if (!valid) {
       this.grid[row][col] = 0;
       i--;
+    } 
+    if (i == -1) {
+      throw "No solution found";
     }
   }
 }

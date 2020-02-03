@@ -82,4 +82,15 @@ describe('board', () => {
     board.solve();
     expect(board.grid).toEqual(expectedSolution);    
   });
+
+  it('displays alert if no solution found', () => {
+    const impossibleBoard = 
+    '123456789745823610000000000000000000000000000000000000000000000000000000000000000';
+    board = new Board(impossibleBoard);
+    board.makeGrid(board.input);
+    board.findBlanks();
+    expect(() => {
+      board.solve();
+    }).toThrow('No solution found')
+  });
 });
