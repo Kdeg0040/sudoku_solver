@@ -8,6 +8,7 @@
 (function renderTable() {
   tableDiv = document.getElementById("board");
   table = document.createElement('TABLE');
+  table.setAttribute("id", "table")
   tableBody = document.createElement('TBODY');
   table.appendChild(tableBody);
   for (let i = 0; i < 9; i++) {
@@ -63,6 +64,16 @@ Game.prototype.selectCell = function(element) {
 Game.prototype.solve = function() {
   this.board.findBlanks();
   this.board.solve();
+  this.renderGrid();
+}
+
+Game.prototype.renderGrid = function() {
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      document.getElementById("table").rows[i].cells[j].innerHTML = 
+      this.board.grid[i][j];
+    }
+  }
 }
 
 game = new Game();
