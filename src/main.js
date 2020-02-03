@@ -60,4 +60,9 @@ Game.prototype.selectCell = function(element) {
   }
 }
 
+Game.prototype.solve = function() {
+  this.board.findBlanks();
+  this.board.solve();
+}
+
 game = new Game();
