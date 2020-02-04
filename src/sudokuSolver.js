@@ -11,11 +11,25 @@ Board.prototype.makeGrid = function(input) {
 }
 
 Board.prototype.findBlanks = function() {
+  this.blanks = [];
   for (let x = 0; x <= 8; x++) {
     for (let y = 0; y <= 8; y++) {
       if (this.grid[x][y] == 0) {
         this.blanks.push([x,y])
       }
+    }
+  }
+}
+
+Board.prototype.clearCells = function(nos_rem) {
+  for (let i = 0; i < (81 - nos_rem);) {
+    row = Math.floor(Math.random() * 9);
+    col = Math.floor(Math.random() * 9);
+    cell = this.grid[row][col]
+    if (!this.grid[row][col] == 0) {
+      this.grid[row][col] = 0;
+      this.findBlanks();
+      i++;    
     }
   }
 }
