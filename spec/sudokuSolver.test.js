@@ -112,7 +112,7 @@ describe('board', () => {
     expect(board.blanks.length).toEqual(0);
     board.clearCells(remainingCells);
     expect(board.blanks.length).toBeGreaterThan(0);
-    expect(board.blanks.length).toEqual(81-remainingCells);
+    expect(board.blanks.length == 55 || board.blanks.length == 56).toBe(true);
   });
 
   it('can clear cells symmetrically from centre of board', () => {
@@ -130,8 +130,19 @@ describe('board', () => {
       [3, 2, 8, 7, 9, 1, 4, 6, 5]
     ]
     board.findBlanks();
+    expect(board.blanks.length).toEqual(0);
     board.clearSymmetrically(4, 5);
+    expect(board.blanks.length).toEqual(2);
     expect(board.grid[4][5]).toEqual(0);
     expect(board.grid[4][3]).toEqual(0);
+    board.clearSymmetrically(5, 5);
+    expect(board.grid[5][5]).toEqual(0);
+    expect(board.grid[3][3]).toEqual(0);
+    board.clearSymmetrically(7, 1);
+    expect(board.grid[7][1]).toEqual(0);
+    expect(board.grid[1][7]).toEqual(0);
+    board.clearSymmetrically(2, 1);
+    expect(board.grid[2][1]).toEqual(0);
+    expect(board.grid[6][7]).toEqual(0);
   });
 });

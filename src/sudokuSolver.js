@@ -22,13 +22,12 @@ Board.prototype.findBlanks = function() {
 }
 
 Board.prototype.clearCells = function(nos_rem) {
-  for (let i = 0; i < (81 - nos_rem);) {
+  for (let i = 0; i < (Math.floor((81 - nos_rem)/2));) {
     row = Math.floor(Math.random() * 9);
     col = Math.floor(Math.random() * 9);
-    cell = this.grid[row][col]
+    cell = this.grid[row][col];
     if (!this.grid[row][col] == 0) {
-      this.grid[row][col] = 0;
-      this.findBlanks();
+      this.clearSymmetrically(row, col);
       i++;    
     }
   }
@@ -36,10 +35,11 @@ Board.prototype.clearCells = function(nos_rem) {
 
 Board.prototype.clearSymmetrically = function(row, column) {
   const center = 4;
-  oppRow = center + (center - row)
-  oppCol = center + (center - column)
+  oppRow = center + (center - row);
+  oppCol = center + (center - column);
   this.grid[row][column] = 0;
   this.grid[oppRow][oppCol] = 0;
+  this.findBlanks();
 }
 
 Board.prototype.solve = function() {
