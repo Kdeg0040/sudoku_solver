@@ -37,9 +37,28 @@ table {
   margin-top: 1em;
 }
 
+$border-thick: 3px solid #454549cf;
+$border-normal: 1px solid #45454931;
+
+table tr:nth-of-type(3n) {
+  border-bottom: $border-thick;
+}
+
+table tr:first-of-type {
+  border-top: $border-thick;
+}
+
+table td:first-of-type {
+  border-left: $border-thick;
+}
+
+table td:nth-of-type(3n) {
+  border-right: $border-thick;
+}
+
 td {
   text-align: center;
-  border: 1px solid #45454989; 
+  border: $border-normal; 
   width: 3em;
   height: 3em;
   font-size: 14px;
