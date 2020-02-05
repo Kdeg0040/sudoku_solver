@@ -34,6 +34,14 @@ Board.prototype.clearCells = function(nos_rem) {
   }
 }
 
+Board.prototype.clearSymmetrically = function(row, column) {
+  const center = 4;
+  oppRow = center + (center - row)
+  oppCol = center + (center - column)
+  this.grid[row][column] = 0;
+  this.grid[oppRow][oppCol] = 0;
+}
+
 Board.prototype.solve = function() {
   const maxValue = 9;
   for (let i = 0; i < this.blanks.length;) {
