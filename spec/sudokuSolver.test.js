@@ -78,7 +78,6 @@ describe('board', () => {
       [5, 9, 6, 3, 8, 4, 2, 1, 7],
       [3, 2, 8, 7, 9, 1, 4, 6, 5]
     ]
-    board.findBlanks();
     board.solve();
     expect(board.grid).toEqual(expectedSolution);    
   });
@@ -88,7 +87,6 @@ describe('board', () => {
     '123456789745823610000000000000000000000000000000000000000000000000000000000000000';
     board = new Board(impossibleBoard);
     board.makeGrid(board.input);
-    board.findBlanks();
     expect(() => {
       board.solve();
     }).toThrow('No solution found')

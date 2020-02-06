@@ -44,6 +44,7 @@ Board.prototype.clearSymmetrically = function(row, column) {
 
 Board.prototype.solve = function() {
   const maxValue = 9;
+  this.findBlanks();
   for (let i = 0; i < this.blanks.length;) {
     row = this.blanks[i][0];
     col = this.blanks[i][1];
