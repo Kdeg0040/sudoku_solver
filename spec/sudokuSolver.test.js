@@ -143,4 +143,11 @@ describe('board', () => {
     expect(board.grid[2][1]).toEqual(0);
     expect(board.grid[6][7]).toEqual(0);
   });
+
+  it('can make a blank board', () => {
+    const board = new Board();
+    expect(board.blanks).toEqual([]);
+    board.makeBlank();
+    expect(board.blanks.length).toEqual(81);
+  });
 });

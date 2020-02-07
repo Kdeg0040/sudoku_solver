@@ -21,6 +21,16 @@ Board.prototype.findBlanks = function() {
   }
 }
 
+Board.prototype.makeBlank = function() {
+  let blank = ''
+  for (let i = 1; i <= 81; i++) {
+    blank += '0';
+  }
+  this.input = blank;
+  this.makeGrid(blank);
+  this.findBlanks();
+}
+
 Board.prototype.clearCells = function(nos_rem) {
   for (let i = 0; i < (Math.floor((81 - nos_rem)/2));) {
     row = Math.floor(Math.random() * 9);
