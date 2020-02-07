@@ -51,7 +51,6 @@ Game.prototype.setCellValue = function(value) {
     document.getElementsByClassName("selected")[0].className = ""
     this.selected = null;
   }
-
 }
 
 Game.prototype.selectCell = function(element) {
@@ -69,8 +68,14 @@ Game.prototype.selectCell = function(element) {
   }
 }
 
+Game.prototype.generate = function() {
+  this.board.generate(9);
+  this.board.solve();
+  this.board.clearCells(25);
+  this.renderGrid();
+}
+
 Game.prototype.solve = function() {
-  this.board.findBlanks();
   this.board.solve();
   this.renderGrid();
 }
