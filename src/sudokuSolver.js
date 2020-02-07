@@ -52,6 +52,19 @@ Board.prototype.clearSymmetrically = function(row, column) {
   this.findBlanks();
 }
 
+Board.prototype.generate = function(num) {
+  this.makeBlank();
+  while (this.blanks.length > 81 - num) {
+    randomNum = Math.ceil((Math.random() * 9));
+    row = Math.floor(Math.random() * 9);
+    col = Math.floor(Math.random() * 9);
+    if(this.isValid(row, col, randomNum)) {
+      this.grid[row][col] = randomNum;
+    }
+    this.findBlanks();
+  }
+}
+
 Board.prototype.solve = function() {
   const maxValue = 9;
   this.findBlanks();

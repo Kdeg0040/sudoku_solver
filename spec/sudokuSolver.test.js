@@ -148,4 +148,12 @@ describe('board', () => {
     expect(board.grid[2][1]).toEqual(0);
     expect(board.grid[6][7]).toEqual(0);
   });
+
+  it('can seed an empty board', () => {
+    const board = new Board();
+    board.makeBlank();
+    board.generate(9);
+    board.findBlanks();
+    expect(board.blanks.length).toEqual(72);
+  })
 });
