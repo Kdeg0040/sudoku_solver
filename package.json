@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "harp server --port $PORT",
-    "test": "jest --coverage"
+    "test": "jest",
+    "cover": "jest --coverage"
   },
   "repository": {
     "type": "git",
